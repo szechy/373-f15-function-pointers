@@ -6,13 +6,13 @@
 #include "sort.h"
 
 __attribute__ ((weak))
-int compare(int a, int b) {
-	return a - b;
+int compare_ptr(const void *a, const void *b) {
+	return (*(int *)a  - *(int *)b); 
 }
 
 __attribute__ ((weak))
-int compare_ptr(void *a, void *b) {
-	return *(int *)a  - *(int *)b; 
+int compare(int a, int b) {
+	return a - b;
 }
 
 void bubble_sort(int *numbers, unsigned count) {
